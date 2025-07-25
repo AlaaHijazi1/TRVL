@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+input {
+  border: none;
+}
+
+.header {
+  background-color: #181818;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+.header__logo {
+  height: 100%;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__list {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 15px;
+}
+.header__list-link {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__list-link:hover {
+  border-bottom: 3px solid #fff;
+}
+.header__button {
+  padding: 11px 17px;
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #fff;
+}
+.header__button:hover {
+  transition: 0.3s ease;
+  background-color: #fff;
+  color: #181818;
+}
+.header__burger {
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+  display: none;
+}
+.header__link {
+  color: #fff;
+}
+
+.bi-x-lg {
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  .header__burger {
+    display: block;
+  }
+  .header__list {
+    width: 100%;
+    background-color: #242124;
+    padding: 15px 0;
+    gap: 0;
+    position: absolute;
+    top: 70px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-100px);
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+    transition: 0.3s ease;
+  }
+  .header__list-link:hover {
+    border: none;
+  }
+  .header__list.active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: 0.3s ease;
+  }
+  .header__button {
+    margin-top: 10px;
+    width: 70vw;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__link {
+    padding: 15px 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__link:hover {
+    transition: 0.3s ease;
+    color: #181818;
+    background-color: #fff;
+  }
+}/*# sourceMappingURL=navbar.css.map */

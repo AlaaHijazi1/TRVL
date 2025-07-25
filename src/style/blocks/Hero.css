@@ -1,0 +1,70 @@
+.heroBanner {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heroBanner__video {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.heroBanner__about {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+  margin: 5px;
+}
+.heroBanner__text {
+  font-size: 3.6rem;
+  margin-bottom: 5px;
+}
+.heroBanner__question {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.heroBanner__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+.heroBanner__start {
+  color: #fff;
+  padding: 11px 17px;
+  border: 1px solid #fff;
+  font-size: 18px;
+}
+.heroBanner__start:hover {
+  transition: 0.3s ease;
+  background-color: #fff;
+  color: #181818;
+}
+.heroBanner__watch {
+  font-size: 15px;
+  color: #181818;
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 11px 17px;
+}
+
+.bi-play-circle {
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .heroBanner__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  .heroBanner__text {
+    font-size: 2rem;
+  }
+}/*# sourceMappingURL=Hero.css.map */

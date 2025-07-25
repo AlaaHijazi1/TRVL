@@ -1,0 +1,102 @@
+@use "../base/reset" as *;
+@use "../utils/variables" as *;
+@use "../utils//mixin" as *;
+.header {
+  background-color: $Eerie-Black;
+  height: 70px;
+  @include flex_center_space;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  &__logo {
+    height: 100%;
+    color: $white;
+    cursor: pointer;
+    @include flex_center;
+  }
+  &__list {
+    height: 100%;
+    @include flex_center;
+    gap: 2.5rem;
+    font-size: 15px;
+    &-link {
+      height: 100%;
+      @include flex_center;
+      &:hover {
+        border-bottom: 3px solid $white;
+      }
+    }
+  }
+  &__button {
+    padding: 11px 17px;
+    color: $white;
+    font-weight: bold;
+    border: 1px solid $white;
+    &:hover {
+      transition: 0.3s ease;
+      background-color: $white;
+      color: $Eerie-Black;
+    }
+  }
+  &__burger {
+    cursor: pointer;
+    font-size: 30px;
+    color: $white;
+    display: none;
+  }
+  &__link {
+    color: $white;
+  }
+}
+
+.bi-x-lg {
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__burger {
+      display: block;
+    }
+    &__list {
+      width: 100%;
+      background-color: $Raisin-Black;
+      padding: 15px 0;
+      gap: 0;
+      position: absolute;
+      top: 70px;
+      z-index: 2;
+      opacity: 0;
+      transform: translateX(-100px);
+      height: fit-content;
+      flex-direction: column;
+      transition: 0.3s ease;
+      &-link {
+        &:hover {
+          border: none;
+        }
+      }
+      &.active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: 0.3s ease;
+      }
+    }
+    &__button {
+      margin-top: 10px;
+      width: 70vw;
+      padding: 15px 0;
+      @include flex_center;
+    }
+    &__link {
+      padding: 15px 0;
+      width: 100vw;
+      @include flex_center;
+      &:hover {
+        transition: 0.3s ease;
+        color: $Eerie-Black;
+        background-color: $white;
+      }
+    }
+  }
+}

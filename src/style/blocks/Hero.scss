@@ -1,0 +1,66 @@
+@use "../utils/variables" as *;
+@use "../utils/mixin" as *;
+.heroBanner {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  top: 70px;
+  @include flex_center;
+  &__video {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+  }
+  &__about {
+    position: absolute;
+    text-align: center;
+    color: $white;
+    padding: 5px;
+    margin: 5px;
+  }
+  &__text {
+    font-size: 3.6rem;
+    margin-bottom: 5px;
+  }
+  &__question {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  &__buttons {
+    @include flex_center;
+    gap: 13px;
+  }
+  &__start {
+    color: $white;
+    padding: 11px 17px;
+    border: 1px solid $white;
+    font-size: 18px;
+    &:hover {
+      transition: 0.3s ease;
+      background-color: $white;
+      color: $Eerie-Black;
+    }
+  }
+  &__watch {
+    font-size: 15px;
+    color: $Eerie-Black;
+    border: 1px solid $white;
+    background-color: $white;
+    padding: 11px 17px;
+  }
+}
+.bi-play-circle {
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .heroBanner {
+    &__buttons {
+      @include flex_col;
+    }
+    &__text {
+      font-size: 2rem;
+    }
+  }
+}

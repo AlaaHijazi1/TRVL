@@ -1,0 +1,87 @@
+@use "../utils/variables" as *;
+@use "../utils/mixin" as *;
+.footer {
+  background-color: $Eerie-Black;
+  color: $white;
+  padding: 2rem;
+  @include flex_center-col;
+  &__title {
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    & p {
+      font-size: 17px;
+      line-height: 2rem;
+    }
+  }
+  &__form {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    & input {
+      padding: 10px;
+      border-radius: 7px;
+    }
+    & button {
+      color: $white;
+      border: 1px solid $white;
+      padding: 10px;
+      border-radius: 7px;
+      &:hover {
+        transition: 0.3s ease;
+        background-color: $white;
+        color: $Eerie-Black;
+      }
+    }
+  }
+  &__contact {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6rem;
+    margin-bottom: 3rem;
+    &-columnTitle {
+      margin-bottom: 1rem;
+      font-size: 19px;
+    }
+    &-columnItems {
+      @include flex_col;
+      gap: 5px;
+    }
+  }
+  &__end {
+    width: 100%;
+    @include flex_center_space;
+    &-title {
+      font-size: 23px;
+    }
+    &-social {
+      font-size: 18px;
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    &__form {
+      @include flex_center-col;
+    }
+    &__contact {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 2;
+    }
+  }
+}
+@media (max-width: 484px) {
+  .footer {
+    &__contact {
+      grid-template-columns: 1fr;
+    }
+    &__end {
+      @include flex_col;
+      gap: 10px;
+    }
+  }
+}
